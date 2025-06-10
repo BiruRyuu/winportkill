@@ -49,12 +49,18 @@ You can download the pre-built executable from the [Releases](https://github.com
 ### Example
 ```bash
 $ ./winportkill.exe
-Enter port number: 8080
-Processes using port 8080:
-- PID: 1234, Name: example.exe
-- PID: 5678, Name: anotherapp.exe
-Enter PID to kill (or 0 to exit): 1234
-Process 1234 terminated successfully.
+Port Kill CLI - Enter port number to scan (or 'q' to quit):
+> 1234
+Scanning Port ...
+
+Open ports for 1234:
+         Address    PID   Process Name
+         -------    ---   ------------
+  127.0.0.1:1234  12412  LM Studio.exe
+
+Options: Enter PID or process name to kill, 'all' to kill all, 'skip' to continue, or process name (e.g., node):
+> 12412
+Process with PID 12412 (LM Studio.exe) terminated successfully.
 ```
 
 ## Important Notes
