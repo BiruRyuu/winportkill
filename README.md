@@ -35,7 +35,7 @@
 4. The executable `winportkill.exe` is ready to use!
 
 ### Install via Binary
-You can download the pre-built executable from the [Releases](https://github.com/yourusername/winportkill/releases) section.
+You can download the pre-built executable from the [Releases](https://github.com/imrostami/winportkill/releases) section.
 
 ## Usage
 1. Run the program:
